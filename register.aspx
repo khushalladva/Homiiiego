@@ -82,10 +82,4 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/mock-data.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/auth.js"></script>
-    <script src="assets/js/pages/register.js"></script>
 </asp:Content>
