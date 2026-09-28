@@ -1,0 +1,60 @@
+/* =========================================================
+   SmartService — Dashboard Layout (User / Provider / Admin)
+   ========================================================= */
+
+.dash-wrap { display: flex; min-height: 100vh; background: var(--light); }
+
+.dash-sidebar {
+  width: 260px; flex-shrink: 0;
+  background: var(--white); border-right: 1px solid var(--border);
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 1.5rem 0;
+  z-index: 1020;
+}
+.dash-sidebar .side-brand {
+  display: flex; align-items: center; gap: 0.55rem; padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border); margin-bottom: 1rem;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--dark);
+}
+.dash-sidebar .side-brand .brand-icon { width: 34px; height: 34px; background: var(--primary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; }
+.dash-sidebar .side-section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 700; padding: 0.5rem 1.5rem; margin-top: 0.5rem; }
+.dash-sidebar .side-link {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.68rem 1.5rem; color: var(--text); font-weight: 500; font-size: 0.93rem;
+  border-left: 3px solid transparent;
+}
+.dash-sidebar .side-link i { font-size: 1.05rem; width: 20px; text-align: center; color: var(--muted); }
+.dash-sidebar .side-link:hover { background: var(--light); }
+.dash-sidebar .side-link.active { background: var(--primary-light); color: var(--primary); border-left-color: var(--primary); font-weight: 600; }
+.dash-sidebar .side-link.active i { color: var(--primary); }
+.dash-sidebar .side-link .badge-mini { margin-left: auto; background: var(--danger); color: #fff; font-size: 0.68rem; padding: 0.15rem 0.45rem; border-radius: var(--radius-pill); }
+
+/* Admin sidebar (dark) */
+.dash-sidebar.admin-dark { background: #0B1220; border-right-color: #1C2A40; }
+.dash-sidebar.admin-dark .side-brand { color: #fff; border-bottom-color: #1C2A40; }
+.dash-sidebar.admin-dark .side-section-label { color: #5C6B84; }
+.dash-sidebar.admin-dark .side-link { color: #B9C3D6; }
+.dash-sidebar.admin-dark .side-link i { color: #6A7793; }
+.dash-sidebar.admin-dark .side-link:hover { background: #131E30; }
+.dash-sidebar.admin-dark .side-link.active { background: #131E30; color: #fff; border-left-color: var(--primary); }
+.dash-sidebar.admin-dark .side-link.active i { color: var(--primary); }
+
+.dash-main { flex-grow: 1; min-width: 0; }
+.dash-topbar {
+  height: 72px; background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 1.75rem;
+  position: sticky; top: 0; z-index: 1010;
+}
+.dash-topbar .sidebar-toggle { display: none; background: none; border: none; font-size: 1.4rem; color: var(--dark); }
+.dash-content { padding: 1.75rem; }
+.dash-page-title { font-size: 1.45rem; margin-bottom: 0.2rem; }
+.dash-page-sub { color: var(--muted); font-size: 0.92rem; }
+
+.sidebar-backdrop { display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.5); z-index: 1015; }
+.sidebar-backdrop.show { display: block; }
+
+@media (max-width: 991.98px) {
+  .dash-sidebar { position: fixed; left: -280px; top: 0; transition: left 0.25s ease; box-shadow: var(--shadow-lg); }
+  .dash-sidebar.open { left: 0; }
+  .dash-topbar .sidebar-toggle { display: inline-flex; align-items: center; }
+}
